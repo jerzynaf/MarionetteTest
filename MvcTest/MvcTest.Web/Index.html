@@ -53,18 +53,20 @@
         <button class="btn col-md-2 col-md-offset-5" id="return">Return</button>
     </script>
 
-    <script type="text/template" id="person-edit-view">
+<script type="text/template" id="person-edit-view">
         <h1>Update <%- fullName %></h1>
         </br>
-        <fieldset>
-            <legend>User Details</legend>
-            <div class="form-group">
-                <input type="checkbox" id="is-authorised" name="isAuthorised"<%=isAuthorised===true?'checked':''%>/><label id="is-authorised-label">Authorised</label>
-            </div>
-            <div class="form-group">
-                <input type="checkbox" id="is-enabled" name="isEnabled"<%=isEnabled===true?'checked':''%>/><label id="is-enabled-label">Enabled</label>
-            </div>
-        </fieldset>
+    <fieldset>
+        <legend>User Details</legend>
+        <div class="form-group">
+            <input type="checkbox" id="is-authorised" name="isAuthorised"<%=isAuthorised===true?'checked':''%>/>
+            <label id="is-authorised-label">Authorised</label>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="is-enabled" name="isEnabled"<%=isEnabled===true?'checked':''%>/>
+            <label id="is-enabled-label">Enabled</label>
+        </div>
+    </fieldset>
         <fieldset>
             <legend>Favourite Colours</legend>
             <div id="colours-region"></div>
