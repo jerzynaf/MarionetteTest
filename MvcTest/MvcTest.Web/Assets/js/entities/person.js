@@ -46,7 +46,7 @@
     return API.getPeopleEntities();
   });
 
-  ContactManager.reqres.setHandler("person:entity", function (id) {
+  PeopleManager.reqres.setHandler("person:entity", function (id) {
     return API.getPersonEntity(id);
   });
 });
