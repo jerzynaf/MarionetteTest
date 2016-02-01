@@ -136,11 +136,14 @@
     <Content Include="Assets\css\bootstrap.css" />
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\js\app.js" />
+    <Content Include="Assets\js\apps\people\edit\edit_controller.js" />
+    <Content Include="Assets\js\apps\people\edit\edit_views.js" />
     <Content Include="Assets\js\apps\people\list\list_controller.js" />
     <Content Include="Assets\js\apps\people\list\list_view.js" />
     <Content Include="Assets\js\apps\people\list\yesNo.js" />
     <Content Include="Assets\js\apps\people\people-app.js" />
     <Content Include="Assets\js\common\views.js" />
+    <Content Include="Assets\js\entities\colour.js" />
     <Content Include="Assets\js\entities\person.js" />
     <Content Include="Assets\js\vendor\backbone.js" />
     <Content Include="Assets\js\vendor\backbone.marionette.js" />
