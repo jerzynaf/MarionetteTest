@@ -16,14 +16,9 @@
           });
 
           view.on("form:submit", function (data) {
-            //TODO
-            if (person.save(data)) {
+            $.when(person.save(data)).done(function() {
               PeopleManager.trigger("people:list");
-            }
-            else {
-              //TODO
-              //view.triggerMethod("form:data:invalid", contact.validationError);
-            }
+            });
           });
 
 

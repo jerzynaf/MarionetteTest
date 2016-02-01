@@ -6,6 +6,11 @@
       coloursRegion: "#colours-region"
     },
 
+    ui: {
+      isAuthorisedCheckbox: "#is-authorised",
+      isEnabledCheckbox: "#is-enabled"
+    },
+
     events: {
       "click button.js-saveChanges": "submitClicked",
       "click button.js-cancel": "cancelClicked",
@@ -16,8 +21,10 @@
     submitClicked: function (e) {
       e.preventDefault();
       var data = Backbone.Syphon.serialize(this);
-      //TODO
-      //additional logic for colours!
+      var region = this.getRegion("coloursRegion");
+      var coloursView = region.currentView;
+      var colours = coloursView.collection;
+      data.colours = colours.toJSON();
       this.trigger("form:submit", data);
     },
 
@@ -28,36 +35,36 @@
 
     isAuthorisedLabelClicked: function (e) {
       e.preventDefault();
-      //TODO
+      this.ui.isAuthorisedCheckbox.toggle();
     },
 
     isEnabledLabelClicked: function (e) {
       e.preventDefault();
-      //TODO
+      this.ui.isEnabledCheckbox.toggle();
+    }
+  });
+
+  Edit.ColourView = Marionette.ItemView.extend({
+    tagName: "div",
+    className: "form-group",
+    template: "#colour-item",
+
+    events: {
+      "click input": "checkboxClicked"
     },
-});
 
-Edit.ColourView = Marionette.ItemView.extend({
-  tagName: "div",
-  className: "form-group",
-  template: "#colour-item",
+    checkboxClicked: function (e) {
+      this.model.set("isChecked", e.target.checked);
+    }
 
-  events: {
-    "click input": "checkboxClicked"
-  },
+  });
 
-  checkboxClicked: function (e) {
-    this.model.set("isChecked", e.target.checked);
-  }
+  Edit.ColoursView = Marionette.CollectionView.extend({
+    childView: Edit.ColourView
+  });
 
-});
-
-Edit.ColoursView = Marionette.CollectionView.extend({
-  childView: Edit.ColourView
-});
-
-Edit.MissingPersonView = Marionette.ItemView.extend({
-  template: "#missing-person-view"
-});
+  Edit.MissingPersonView = Marionette.ItemView.extend({
+    template: "#missing-person-view"
+  });
 
 });
