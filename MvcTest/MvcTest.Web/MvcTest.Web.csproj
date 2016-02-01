@@ -138,7 +138,10 @@
     <Content Include="Assets\js\vendor\backbone.js" />
     <Content Include="Assets\js\vendor\backbone.marionette.js" />
     <Content Include="Assets\js\vendor\backbone.marionette.min.js" />
+    <Content Include="Assets\js\vendor\backbone.syphon.js" />
+    <Content Include="Assets\js\vendor\backbone.syphon.min.js" />
     <Content Include="Assets\js\vendor\jquery.js" />
+    <Content Include="Assets\js\vendor\jquery.spin.js" />
     <Content Include="Assets\js\vendor\json2.js" />
     <Content Include="Assets\js\vendor\spin.js" />
     <Content Include="Assets\js\vendor\spin.min.js" />
