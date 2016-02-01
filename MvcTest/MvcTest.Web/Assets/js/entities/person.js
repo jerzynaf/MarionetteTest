@@ -9,6 +9,7 @@
   });
 
   var API = {
+
     getPeopleEntities: function () {
       var people = new Entities.PeopleCollection();
       var defer = $.Deferred();
@@ -18,11 +19,6 @@
         }
       });
       var promise = defer.promise();
-      $.when(promise).done(function (fetchedPeople) {
-        if (fetchedPeople.length === 0) {
-          console.log("Empty collection!");
-        }
-      });
       return promise;
     },
 
@@ -37,9 +33,9 @@
           defer.resolve(undefined);
         }
       });
-
       return defer.promise();
     }
+
   };
 
   PeopleManager.reqres.setHandler("people:entities", function () {

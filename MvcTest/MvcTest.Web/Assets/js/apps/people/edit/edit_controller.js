@@ -1,5 +1,6 @@
 ﻿PeopleManager.module("PeopleApp.Edit", function (Edit, PeopleManager, Backbone, Marionette, $, _) {
   Edit.Controller = {
+
     editPerson: function (id) {
       var loadingView = new PeopleManager.Common.Views.Loading();
       PeopleManager.regions.main.show(loadingView);
@@ -8,9 +9,6 @@
       $.when(fetchingPerson).done(function (person) {
         var view;
         if (person !== undefined) {
-          //var rawColours = person.get("colours");
-          //var colours = PeopleManager.request("colours:entities", rawColours);
-          //person.set("colours", colours);
           view = new Edit.Form({
             model: person
           });
@@ -20,12 +18,6 @@
               PeopleManager.trigger("people:list");
             });
           });
-
-
-          view.on("people:list", function () {
-            PeopleManager.trigger("people:list");
-          });
-
 
           view.on("show", function () {
 
@@ -44,5 +36,6 @@
         PeopleManager.regions.main.show(view);
       });
     }
+
   };
 });

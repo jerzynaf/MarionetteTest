@@ -1,4 +1,5 @@
 ﻿PeopleManager.module("Entities", function (Entities, PeopleManager, Backbone, Marionette, $, _) {
+
   Entities.Colour = Backbone.Model.extend({
   });
 

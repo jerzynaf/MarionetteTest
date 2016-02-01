@@ -30,7 +30,7 @@
 
     cancelClicked: function (e) {
       e.preventDefault();
-      this.trigger("people:list");
+      PeopleManager.trigger("people:list");
     },
 
     isAuthorisedLabelClicked: function (e) {
@@ -64,7 +64,13 @@
   });
 
   Edit.MissingPersonView = Marionette.ItemView.extend({
-    template: "#missing-person-view"
-  });
+    template: "#missing-person-view",
+    events: {
+      "click #return": "return"
+    },
+    return: function() {
+      PeopleManager.trigger("people:list");
+    }
+});
 
 });

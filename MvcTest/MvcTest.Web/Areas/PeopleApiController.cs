@@ -1,17 +1,12 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using System.Web.Mvc;
 using AutoMapper;
 using MvcTest.Database.Repositories.Interfaces;
 using MvcTest.Database.Repositories.ParameterModels;
 using MvcTest.Models.ViewModels;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace MvcTest.Web.Areas
 {

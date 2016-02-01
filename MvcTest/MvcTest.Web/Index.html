@@ -13,7 +13,6 @@
 
     <div id="app-container">
         <div id="main-region" class="container">
-            <p>Blank page</p>
         </div>
     </div>
 
@@ -48,11 +47,15 @@
     </script>
 
     <script type="text/template" id="missing-person-view">
-        <div class="alert alert-error">This person doesn't exist !</div>
+        <div class="alert alert-danger">
+            This person doesn't exist !
+        </div>
+        <button class="btn col-md-2 col-md-offset-5" id="return">Return</button>
     </script>
 
     <script type="text/template" id="person-edit-view">
         <h1>Update <%- fullName %></h1>
+        </br>
         <fieldset>
             <legend>User Details</legend>
             <div class="form-group">
@@ -90,7 +93,7 @@
     <script src="Assets/js/vendor/jquery.spin.js"></script>
 
     <script src="Assets/js/app.js"></script>
-<script src="Assets/js/entities/person.js"></script>
+    <script src="Assets/js/entities/person.js"></script>
     <script src="Assets/js/entities/colour.js"></script>
     <script src="Assets/js/common/views.js"></script>
     <script src="Assets/js/apps/people/people-app.js"></script>

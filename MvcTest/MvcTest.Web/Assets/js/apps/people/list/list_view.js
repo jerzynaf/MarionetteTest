@@ -15,13 +15,13 @@
       "click a": "editPerson"
     },
 
-    editPerson: function (id) {
+    editPerson: function (e) {
+      e.preventDefault();
       this.trigger("person:edit", this.model.id);
     }
-
   });
 
-  var NoPeopleView = Marionette.ItemView.extend({
+  List.NoPeopleView = Marionette.ItemView.extend({
     template: "#people-list-none",
     tagName: "tr",
     className: "alert"
@@ -32,6 +32,7 @@
     className: "table table-hover",
     template: "#people-list",
     childView: List.PersonView,
-    childViewContainer: "tbody"
+    childViewContainer: "tbody",
+    emptyView: List.NoPeopleView
   });
 });
